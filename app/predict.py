@@ -11,7 +11,7 @@ ret = model.predict("Environmental laws may require the Company to incur substan
 print(ret)
 
 # 推論
-with open('./dataset/test.tsv', 'r') as f_in, open('./results/test_output2.tsv', 'w') as f_out:
+with open('./dataset/test.tsv', 'r') as f_in, open('./results/test_output3.tsv', 'w') as f_out:
     for row in f_in:
         sid, sentence, html_id = row.strip().split('\t')
         ret = model.predict(sentence)
@@ -20,7 +20,7 @@ with open('./dataset/test.tsv', 'r') as f_in, open('./results/test_output2.tsv',
 
 
 # アウトプット整形
-with open('./results/test_output2.tsv','r') as f_in, open('./results/submission2.tsv', 'w') as f_out:
+with open('./results/test_output3.tsv','r') as f_in, open('./results/submission3.tsv', 'w') as f_out:
     for row in f_in:
         sid, sentence, html_id, label = row.strip().split('\t')
         f_out.write('{}\t{}\n'.format(sid, label))
